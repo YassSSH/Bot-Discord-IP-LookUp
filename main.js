@@ -61,7 +61,7 @@ client.on("message", async msg => {
 
     if (cmd === 'ip') {
         snekfetch.get(`http://ip-api.com/json/${args}`).then(r => {
-            let Geo = new Discord.MessageEmbed()
+            let ip = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setThumbnail(msg.guild.owner.user.displayAvatarURL({ size: 256 }))
                 .setTitle(`**Ip LookUp by Yass**`)
@@ -80,7 +80,7 @@ client.on("message", async msg => {
                 .setFooter(`Yass#2255`)
                 .setFooter(msg.guild.owner.user.tag, msg.guild.owner.user.avatarURL());
 
-            msg.channel.send({ embed: Geo });
+            msg.channel.send({ embed: ip });
         })
     };
 });
